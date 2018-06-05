@@ -2,7 +2,7 @@
 open NUnit.Framework
 open FsUnit
 
-let fastCalculation X = Calculation X 100
+let fastCalculation X = calculation X 100
 
 [<Test>]
 let ``test of norm strategy 1``() =
@@ -19,7 +19,7 @@ let ``test of norm strategy 3``() =
 [<Test>]
 let ``test of norm strategy 4``() =
     fastCalculation (App(App(Combinators.S, Combinators.K), Combinators.K)) 
-        |> should equal (Some(Labstraction('z', Var('z'))))
+        |> should equal (Some(LambdaAbstraction('z', Var('z'))))
 
 [<EntryPoint>]
 let main argv =
